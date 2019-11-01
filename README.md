@@ -1,6 +1,6 @@
 # ebury-test
 
-Download rar file.
+Download and extract rar file.
 
 ## Build Setup
 
