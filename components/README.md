@@ -1,7 +1,36 @@
 # COMPONENTS
 
-**This directory is not required, you can delete it if you don't want to use it.**
+# Attachment
 
-The components directory contains your Vue.js Components.
+This component is for uploading files into a server and displaying thumbnails for images.
 
-_Nuxt.js doesn't supercharge these components._
+configuration example:
+
+``` bash
+
+{
+name: 'attachment',
+required: false
+}
+
+```
+
+# InputField
+
+This is a generic input component creating different fields(input/textarea) based on configuration.
+
+configuration example:
+
+``` bash
+
+{
+name: 'recipienctto',
+placeholder: 'To',
+required: true,
+validation: 'email'
+maxlength: 100
+type: 'textarea'
+}
+
+```
+

@@ -1,6 +1,9 @@
 # PAGES
 
-This directory contains your Application Views and Routes.
-The framework reads all the `*.vue` files inside this directory and creates the router of your application.
+# Index
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/guide/routing).
+This is the landing page with the email form.
+
+# Completed
+
+This is a confirmation page displayed when form submission was successfull.

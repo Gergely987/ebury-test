@@ -44,7 +44,7 @@ export default {
                 }
                 this.validity = valid;
 
-             } else {
+            } else {
                 this.validity = true;
             }
 

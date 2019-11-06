@@ -1,6 +1,7 @@
 # ebury
 
-> ebury test
+This project is an example for an email form, which comes with field validation and a second page for confirmation.
+It also saves the input values into a vuex store.
 
 ## Build Setup
 

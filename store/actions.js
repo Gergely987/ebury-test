@@ -5,7 +5,7 @@ export default {
     setValue: (state, { name, value }) => {
       state.commit("SET_VALUE", { name, value });
     },
-    testFormValidity: (state, payload) => {
+    testFormValidity: state => {
       const stateObj = state.state;
       const keys =  Object.keys(stateObj.emailData);
       let validity = true;
