@@ -35,6 +35,7 @@ export default {
 .main-content {
   background-image: @layout-background;
   min-height: 100vh;
+  padding: 15vh 0;
   
   &__page {
     box-shadow: 0 10px 10px @box-shadow;

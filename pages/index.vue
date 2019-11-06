@@ -3,15 +3,14 @@
     <header>
       Send E-mail
     </header>
-    <section class="section">
-      <div v-for="inputField in inputFields" :key="inputField.name" class="input-container" >
+    <section class="form-content">
+      <div v-for="inputField in inputFields" :key="inputField.name" class="form-content__field">
         <InputField :config="inputField"></InputField>
       </div>
-      <div class="bottom-wrapper">
+      <div class="form-content__bottom">
         <Attachment :config="attachment"></Attachment>
-        <b-button type="is-info" :disabled="!$store.state.formValidity" @click="redirectToCompleted">Send</b-button>
+        <b-button type="is-info" :disabled="!$store.state.formValidity" @click="redirectToCompleted" class="is-submit" icon-left="arrow-right">Send</b-button>
       </div>
-
     </section>
   </form>
 </template>
@@ -78,21 +77,38 @@ export default {
 @import "../assets/css/variables.less";
 
 header {
-  padding: 30px;
+  padding: 25px 40px 30px;
   background-color: @header-bg;
   color: @white;
   border-radius: 4px 4px 0 0;
+  font-size: 20px;
 }
 
-.input-container {
-    width: 100%;
-}
+.form-content {
+  padding: 40px;
 
-.bottom-wrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  align-items: flex-end;
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+
+    .is-submit {
+      min-height: 40px;
+      padding: 0 25px;
+      border-radius: 20px;
+      background-color: @primary;
+
+      &[disabled] {
+        background-color: @disabled-btn;
+        color: @disabled-text;
+      }
+
+      i {
+        font-size: 24px;
+      }
+    }
+  }
 }
 
 </style>

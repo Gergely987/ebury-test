@@ -70,7 +70,19 @@ export default {
 
 .input-field {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 15px;
+
+    input {
+        height: 40px;
+    }
+
+    .help {
+      display: none;
+    }
+
+    .textarea {
+        min-height: 200px;
+    }
 }
 
 </style>

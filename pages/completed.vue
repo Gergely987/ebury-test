@@ -1,7 +1,7 @@
 <template>
   <section class="section confirmation">
-    <div class="icon-container"><b-icon icon="check" size="is-large"></b-icon></div>
-    <p class="confirmation-message">Your email has been sent.</p> 
+    <div class="confirmation__icon"><b-icon icon="check" size="is-large"></b-icon></div>
+    <p class="confirmation__message">Your email has been sent.</p> 
     <hr/>
     <div class="email">
       <p class="email__subject">{{ $store.state.emailData.subject.value }}</p>
@@ -44,25 +44,25 @@ export default {
 
 
 .confirmation {
-  padding: 60px 95px;
-}
+  padding: 65px 95px;
 
-.icon-container {
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  background-color: @confirmation;
-  color: @white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
+  &__icon {
+    margin: 0 auto;
+    width: 104px;
+    height: 104px;
+    border-radius: 52px;
+    background-color: @confirmation;
+    color: @white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
 
-.confirmation-message {
-  font-size: 16px;
-  text-align: center;
+  &__message {
+    font-size: 22px;
+    text-align: center;
+  }
 }
 
 hr {
@@ -72,18 +72,18 @@ hr {
 .email {
   &__subject {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   &__recipienctto,
   &__recipientcc,
   &__recipientbcc {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   &__message {
-    font-size: 14px;
-    margin: 25px 0;
+    font-size: 16px;
+    margin: 20px 0;
   }
 
   &__attachment {

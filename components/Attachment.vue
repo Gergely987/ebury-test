@@ -15,9 +15,7 @@
         </div>
         <b-field class="attachment__uploader">
             <b-upload v-model="dropFiles" multiple>
-                <b-icon
-                    icon="attachment"
-                    size="is-medium">
+                <b-icon icon="attachment">
                 </b-icon>
             </b-upload>
         </b-field>
@@ -64,6 +62,7 @@ export default {
 
     &__title {
         font-size: 16px;
+        line-height: 16px;
         font-weight: bold;
         width: 100%;
         margin: 0 15px;
@@ -120,9 +119,9 @@ export default {
     }
 
     &__uploader {
-        width: 50px;
-        height: 50px;
-        border-radius: 25px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
         border: 2px solid @attach;
         -webkit-transform: rotate(270deg);
         -moz-transform: rotate(270deg);
