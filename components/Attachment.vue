@@ -1,19 +1,19 @@
 <template>
     <div class="attachment">
-        <div v-if="dropFiles.length" class="attached">
-            <p class="attached__title">Attached files</p>
-            <div v-for="(file, index) in dropFiles" :key="index" class="attached__image">
+        <div v-if="dropFiles.length" class="attachment__items">
+            <p class="attachment__title">Attached files</p>
+            <div v-for="(file, index) in dropFiles" :key="index" class="attachment__image">
                 <img :src="createImage(file)" :alt="file.name">
-                <a class="attached__delete" @click="deleteDropFile(index)">
+                <a class="attachment__delete" @click="deleteDropFile(index)">
                     <b-icon
-                        class="attached__delete-icon"
+                        class="attachment__delete-icon"
                         icon="delete-circle"
                         size="is-large">
                     </b-icon>
                 </a>
             </div>
         </div>
-        <b-field class="attach">
+        <b-field class="attachment__uploader">
             <b-upload v-model="dropFiles" multiple>
                 <b-icon
                     icon="attachment"
@@ -32,14 +32,17 @@ export default {
             dropFiles: []
         }
     },
+    watch: {
+        dropFiles(newFiles) {
+            this.$store.dispatch("setValue", { name: 'attachment', value: Object.assign({}, newFiles) });
+        }
+    },
     methods: {
         deleteDropFile(index) {
             this.dropFiles.splice(index, 1)
+
         },
         createImage(file) {
-
-            this.$store.dispatch("setValue", { name: 'attachment', value: this.dropFiles });
-
             return URL.createObjectURL(file);
         }
     }
@@ -50,30 +53,14 @@ export default {
 <style lang="less">
 @import "../assets/css/variables.less";
 
-.attach {
-    width: 50px;
-    height: 50px;
-    border-radius: 25px;
-    border: 2px solid @attach;
-    -webkit-transform: rotate(270deg);
-    -moz-transform: rotate(270deg);
-    -o-transform: rotate(270deg);
-    -ms-transform: rotate(270deg);
-    transform: rotate(270deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.attachment {
 
-    .upload {
-        cursor: pointer;
+    &__items {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px; 
     }
-}
-
-.attached {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
 
     &__title {
         font-size: 16px;
@@ -96,7 +83,7 @@ export default {
         }
 
         &:hover {
-            .attached__delete {
+            .attachment__delete {
                 display: block;
             }
         }
@@ -130,6 +117,25 @@ export default {
             height: 40px; 
         }
 
+    }
+
+    &__uploader {
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border: 2px solid @attach;
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        transform: rotate(270deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .upload {
+            cursor: pointer;
+        }
     }
 
 }

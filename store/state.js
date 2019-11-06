@@ -22,7 +22,7 @@ export default () => ({
             validity: false
         },
         attachment: {
-            value: '',
+            value: [],
             validity: true
         }
     }
