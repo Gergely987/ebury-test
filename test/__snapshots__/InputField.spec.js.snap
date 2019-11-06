@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputField matches input snapshot 1`] = `"<div class=\\"input-field field\\"><b-field type=\\"\\"><b-input></b-input></b-field></div>"`;
+
+exports[`InputField matches textarea snapshot 1`] = `"<div class=\\"input-field field\\"><b-field type=\\"\\"><b-input></b-input></b-field></div>"`;

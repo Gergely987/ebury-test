@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Attachment matches snapshot 1`] = `"<div class=\\"attachment\\" config=\\"[object Object]\\"><!----> <b-field class=\\"attachment__uploader\\"><b-upload multiple=\\"\\"><b-icon icon=\\"attachment\\"></b-icon></b-upload></b-field></div>"`;

@@ -32,21 +32,20 @@ export default {
         validateField() {
             this.dirty = true;
 
-            if(this.config.required && !this.value.length) {
+            if (this.config.required && !this.value.length) {
                 this.validity = false;
-            } else {
-                this.validity = true;
-            }
+            } else if(this.config.validation === 'email' && this.value.length) {
 
-            if(this.config.validation === 'email' && this.value.length) {
                 const emailArray = this.value.split(',');
                 let valid = true;
 
                 for(let i = 0; i < emailArray.length; i++) {
                     valid = valid && this.validEmail(emailArray[i].replace(/\s/g, ''));
                 }
-
                 this.validity = valid;
+
+             } else {
+                this.validity = true;
             }
 
             this.$store.dispatch("setValidation", { name: this.config.name, validity: this.validity });

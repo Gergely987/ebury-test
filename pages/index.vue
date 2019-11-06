@@ -9,7 +9,7 @@
       </div>
       <div class="form-content__bottom">
         <Attachment :config="attachment"></Attachment>
-        <b-button type="is-info" :disabled="!$store.state.formValidity" @click="redirectToCompleted" class="is-submit" icon-left="arrow-right">Send</b-button>
+        <b-button type="is-info" :disabled="!$store.state.formValidity" class="is-submit" icon-left="arrow-right" @click="redirectToCompleted">Send</b-button>
       </div>
     </section>
   </form>
