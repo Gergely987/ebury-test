@@ -1,6 +1,6 @@
-# ebury-test
+# ebury
 
-Download and extract rar file.
+> ebury test
 
 ## Build Setup
 
@@ -18,3 +18,5 @@ $ npm run start
 # generate static project
 $ npm run generate
 ```
+
+For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
